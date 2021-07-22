@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Film Catalogue</string>
+    <string name="title">Title (year)</string>
+    <string name="title_year">%1$s (%2$s)</string>
+    <string name="genre">Genre</string>
+    <string name="overview">Overview</string>
+    <string name="production_companion">Production</string>
+    <string name="duration">Duration</string>
+    <string name="rating">Rating</string>
+    <string name="movies">Movies</string>
+    <string name="tvshow">Tv Shows</string>
+    <string name="list_is_empty">List is Empty</string>
+    <string name="iv_poster">poster image</string>
+    <string name="iv_favorite">favorite button</string>
+    <string name="favorite_list">Favorite List</string>
+    <string name="newest">Newest</string>
+    <string name="oldest">Oldest</string>
+    <string name="title_comment">Comment</string>
+    <string name="title_favorite">Favorite</string>
+</resources>

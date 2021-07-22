@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Title (year)</string>
+    <string name="title_year">%1$s (%2$s)</string>
+    <string name="overview">Overview</string>
+    <string name="rating">Rating</string>
+    <string name="iv_poster">poster image</string>
+    <string name="iv_favorite">favorite button</string>
+</resources>
