@@ -28,4 +28,6 @@ dependencies{
     androidTestImplementation "androidx.test:runner:$androidTestVersion"
     androidTestImplementation "androidx.test:rules:$androidTestVersion"
     androidTestImplementation "androidx.test.ext:junit:$junitExtversion"
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryAndroidVersion"
 }
