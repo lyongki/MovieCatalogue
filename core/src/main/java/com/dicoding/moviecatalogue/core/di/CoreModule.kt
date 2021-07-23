@@ -8,18 +8,26 @@ import com.dicoding.moviecatalogue.core.data.source.remote.RemoteDataSource
 import com.dicoding.moviecatalogue.core.data.source.remote.api.ApiService
 import com.dicoding.moviecatalogue.core.domain.repository.IFilmRepository
 import com.dicoding.moviecatalogue.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-val databaseModule = module{
+val databaseModule = module {
     factory { get<FilmDatabase>().filmDao() }
-    single { Room.databaseBuilder(
-        androidContext(),
-        FilmDatabase::class.java,
-        "Film.db"
-    ).fallbackToDestructiveMigration().build() }
+    single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("filmCatalogue".toCharArray())
+        val factory = SupportFactory(passphrase)
+        Room.databaseBuilder(
+            androidContext(),
+            FilmDatabase::class.java,
+            "Film.db"
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
+    }
 }
 
 val networkModule = module {
