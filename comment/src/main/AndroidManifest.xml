@@ -15,7 +15,7 @@
     </dist:module>
 
     <application tools:ignore="AllowBackup">
-        <activity android:name=".CommentActivity">
+        <activity android:name=".ui.CommentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

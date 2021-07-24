@@ -14,7 +14,7 @@
     </dist:module>
 
     <application tools:ignore="AllowBackup">
-        <activity android:name=".film.FilmActivity">
+        <activity android:name=".film.FavoriteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

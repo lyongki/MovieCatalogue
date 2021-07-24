@@ -48,6 +48,6 @@ interface FilmDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertComment(commentEntity: CommentEntity)
 
-    @Query("SELECT * FROM commententities WHERE film_type = :filmTyoe AND film_id = :filmId")
-    fun getComment(filmTyoe: String, filmId: String):Flow<List<CommentEntity>>
+    @Query("SELECT * FROM commententities WHERE film_type = :filmType AND film_id = :filmId")
+    fun getComment(filmType: String, filmId: String):Flow<List<CommentEntity>>
 }

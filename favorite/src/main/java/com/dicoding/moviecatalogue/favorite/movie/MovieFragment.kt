@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.moviecatalogue.core.domain.model.Movie
 import com.dicoding.moviecatalogue.core.ui.MovieAdapter
 import com.dicoding.moviecatalogue.databinding.FragmentMovieBinding
-import com.dicoding.moviecatalogue.favorite.film.FilmActivity
+import com.dicoding.moviecatalogue.favorite.film.FavoriteActivity
 import com.dicoding.moviecatalogue.ui.detail.DetailFilmActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -58,12 +58,12 @@ class MovieFragment : Fragment() {
                 this.adapter = movieAdapter
             }
 
-            if (arguments?.getString(FilmActivity.SORT, "").equals(""))
+            if (arguments?.getString(FavoriteActivity.SORT, "").equals(""))
                     viewModel.getFavoriteMovies().observe(viewLifecycleOwner, dataObserver)
             else {
                 viewModel.getSortMovies(
                     true,
-                    arguments?.getString(FilmActivity.SORT, "").toString()
+                    arguments?.getString(FavoriteActivity.SORT, "").toString()
                 ).observe(viewLifecycleOwner, dataObserver)
             }
         }

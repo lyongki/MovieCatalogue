@@ -12,7 +12,7 @@ import com.dicoding.moviecatalogue.favorite.di.favoriteModule
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.core.context.loadKoinModules
 
-class FilmActivity : AppCompatActivity() {
+class FavoriteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFilmBinding
     private lateinit var adapter: SectionPagerAdapter
 

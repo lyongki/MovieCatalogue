@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.moviecatalogue.core.domain.model.TvShow
 import com.dicoding.moviecatalogue.core.ui.TvShowAdapter
 import com.dicoding.moviecatalogue.databinding.FragmentTvShowBinding
-import com.dicoding.moviecatalogue.favorite.film.FilmActivity
+import com.dicoding.moviecatalogue.favorite.film.FavoriteActivity
 import com.dicoding.moviecatalogue.ui.detail.DetailFilmActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -59,13 +59,13 @@ class TvShowFragment : Fragment() {
                 this.adapter = tvShowAdapter
             }
 
-            if (arguments?.getString(FilmActivity.SORT, "").equals("")) {
+            if (arguments?.getString(FavoriteActivity.SORT, "").equals("")) {
                     viewModel.getFavoriteTvShows()
                         .observe(viewLifecycleOwner, dataObserver)
             } else {
                 viewModel.getSortTvShows(
                     true,
-                    arguments?.getString(FilmActivity.SORT, "").toString()
+                    arguments?.getString(FavoriteActivity.SORT, "").toString()
                 ).observe(viewLifecycleOwner, dataObserver)
             }
         }

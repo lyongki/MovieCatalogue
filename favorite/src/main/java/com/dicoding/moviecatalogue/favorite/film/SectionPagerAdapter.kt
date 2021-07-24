@@ -14,21 +14,21 @@ class SectionPagerAdapter(
     lifecycle: Lifecycle
 ) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
-    override fun getItemCount(): Int = FilmActivity.TAB_TITLES.size
+    override fun getItemCount(): Int = FavoriteActivity.TAB_TITLES.size
 
     override fun createFragment(position: Int): Fragment =
         when (position) {
             0 -> {
                 MovieFragment().apply {
                     arguments = Bundle().apply {
-                        putString(FilmActivity.SORT, sort)
+                        putString(FavoriteActivity.SORT, sort)
                     }
                 }
             }
             1 -> {
                 TvShowFragment().apply {
                     arguments = Bundle().apply {
-                        putString(FilmActivity.SORT, sort)
+                        putString(FavoriteActivity.SORT, sort)
                     }
                 }
             }

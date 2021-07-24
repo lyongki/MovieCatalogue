@@ -1,4 +1,4 @@
-package com.dicoding.moviecatalogue.comment
+package com.dicoding.moviecatalogue.comment.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

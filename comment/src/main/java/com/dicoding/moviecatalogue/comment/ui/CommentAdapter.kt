@@ -1,4 +1,4 @@
-package com.dicoding.moviecatalogue.comment
+package com.dicoding.moviecatalogue.comment.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

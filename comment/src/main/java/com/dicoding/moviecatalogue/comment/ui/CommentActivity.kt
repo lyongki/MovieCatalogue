@@ -1,4 +1,4 @@
-package com.dicoding.moviecatalogue.comment
+package com.dicoding.moviecatalogue.comment.ui
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.moviecatalogue.comment.R
+import com.dicoding.moviecatalogue.comment.commentModule
 import com.dicoding.moviecatalogue.comment.databinding.ActivityCommentBinding
 import com.dicoding.moviecatalogue.comment.databinding.CommentDialogBinding
 import com.dicoding.moviecatalogue.core.domain.model.Comment
@@ -39,6 +41,7 @@ class CommentActivity : AppCompatActivity(), View.OnClickListener {
         viewModel.filmId = filmId.toString()
         viewModel.filmType = filmType.toString()
         getComment()
+        supportActionBar?.title = getString(R.string.title_comment)
     }
 
     private fun getComment() {
