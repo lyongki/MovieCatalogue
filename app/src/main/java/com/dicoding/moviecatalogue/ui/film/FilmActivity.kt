@@ -67,7 +67,6 @@ class FilmActivity : AppCompatActivity() {
             R.string.tvshow
         )
 
-        const val FAVORITE = "FAVORITE"
         const val SORT = "SORT"
     }
 }

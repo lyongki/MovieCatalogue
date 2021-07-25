@@ -9,7 +9,7 @@ import com.dicoding.moviecatalogue.favorite.movie.MovieFragment
 import com.dicoding.moviecatalogue.favorite.tvshow.TvShowFragment
 
 class SectionPagerAdapter(
-    val sort: String,
+    private val sort: String,
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle
 ) :

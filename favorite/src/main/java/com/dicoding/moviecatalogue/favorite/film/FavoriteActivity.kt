@@ -6,19 +6,19 @@ import android.view.MenuItem
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.moviecatalogue.core.utils.SortUtils
-import com.dicoding.moviecatalogue.databinding.ActivityFilmBinding
 import com.dicoding.moviecatalogue.favorite.R
+import com.dicoding.moviecatalogue.favorite.databinding.ActivityFavoriteBinding
 import com.dicoding.moviecatalogue.favorite.di.favoriteModule
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.core.context.loadKoinModules
 
 class FavoriteActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityFilmBinding
+    private lateinit var binding: ActivityFavoriteBinding
     private lateinit var adapter: SectionPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityFilmBinding.inflate(layoutInflater)
+        binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         loadKoinModules(favoriteModule)

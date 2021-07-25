@@ -1,16 +1,14 @@
 package com.dicoding.moviecatalogue.comment.ui
 
-import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.moviecatalogue.comment.R
-import com.dicoding.moviecatalogue.comment.commentModule
 import com.dicoding.moviecatalogue.comment.databinding.ActivityCommentBinding
 import com.dicoding.moviecatalogue.comment.databinding.CommentDialogBinding
+import com.dicoding.moviecatalogue.comment.di.commentModule
 import com.dicoding.moviecatalogue.core.domain.model.Comment
 import com.dicoding.moviecatalogue.ui.detail.DetailFilmActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -72,28 +70,22 @@ class CommentActivity : AppCompatActivity(), View.OnClickListener {
         builder.setTitle("Add Comment")
         builder.setCancelable(true)
         builder.setView(binding.root)
-        builder.setPositiveButton("Send",object : DialogInterface.OnClickListener{
-            override fun onClick(dialog: DialogInterface?, which: Int) {
-                val date = DateFormat.getDateInstance(DateFormat.LONG).format(Calendar.getInstance().time)
-                val message = binding.etComment.text.toString()
+        builder.setPositiveButton("Send"
+        ) { _, _ ->
+            val date =
+                DateFormat.getDateInstance(DateFormat.LONG).format(Calendar.getInstance().time)
+            val message = binding.etComment.text.toString()
 
-                Log.d(CommentActivity::class.simpleName, date+ " "+ message)
-
-                val comment = Comment(
-                    film_id = viewModel.filmId,
-                    film_type = viewModel.filmType,
-                    comment = message,
-                    date = date
-                )
-                viewModel.insertComment(comment)
-            }
-
-        })
-        builder.setNegativeButton("Back",object : DialogInterface.OnClickListener{
-            override fun onClick(dialog: DialogInterface?, which: Int) {
-                dialog?.dismiss()
-            }
-        })
+            val comment = Comment(
+                film_id = viewModel.filmId,
+                film_type = viewModel.filmType,
+                comment = message,
+                date = date
+            )
+            viewModel.insertComment(comment)
+        }
+        builder.setNegativeButton("Back"
+        ) { dialog, _ -> dialog?.dismiss() }
 
         val dialog = builder.create()
         dialog.show()
