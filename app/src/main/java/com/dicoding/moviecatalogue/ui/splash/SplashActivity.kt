@@ -12,6 +12,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        supportActionBar?.hide()
+
         Timer().schedule(object : TimerTask() {
             override fun run() {
                 Intent(
